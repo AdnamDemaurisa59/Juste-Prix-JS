@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice - Juste Prix - JS</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+    <header>
+        <h1>Bienvenue dans le jeu du Juste Prix</h1>
+    </header>
+
+    <main>
+        <section>
+            <!-- <div class="explication-game">
+                <p>Le jeu consiste à deviner un nombre entre 1 et 100</p>
+            </div> -->
+        </section>
+
+        <section class="position-carte">
+            <div class="carte" id="carte">
+                <!-- <span id="number-carte"></span> -->
+                <div>
+                    <button type="submit" id="resetButton" style="display: none;">Recommencer le jeu</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="consigne">
+            <div class="position-score">
+                <h2 id="message"><span id="secretNumber"></span></h2>
+            </div>
+            <div class="tentative">
+                <h2>Vous avez le droit à <span id="tentatives"></span> tentatives</h2>
+            </div>
+        </section>
+
+        <section class="guess-form">
+            <form id="guessForm">
+                <div class="enter-proposition">
+                    <label for="guessInput">Entrez votre proposition : </label>
+                </div>
+                <div class="number">
+                    <input type="number" id="guessInput" min="1" max="100" required> 
+                </div>
+                <div class="btn-submit">
+                    <button type="submit" id="submitButton">Proposer</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p> &copy; Créér par <a href="https://www.linkedin.com/in/adnam-koud-demaurisa-447379194/" target="_blank">Adnam Koud Demaurisa</a></p>
+        <div class="icon-group">
+            <div class="linkedin">
+                <a href="https://www.linkedin.com/in/adnam-koud-demaurisa-447379194/" target="_blank"><i class="fa-brands fa-linkedin"></i></a> 
+              </div>
+            
+            <div class="github">
+                <a href="#" target="_blank" class="github"><i class="fa-brands fa-github"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./script.js"></script>
+    
+</body>
+</html>
