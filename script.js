@@ -9,11 +9,15 @@
  const guessInput = document.getElementById("guessInput");
  const submitButton = document.getElementById("submitButton");
  const resetButton = document.getElementById("resetButton");
- const carte = document.getElementById("carte");
+//  const carte = document.getElementById("carte");
+ let body = document.querySelector("body");
+ let imgCarte = document.querySelector("img");
+ const tenta = document.querySelector(".tenta")
+ let positionCarte = document.querySelector(".position-carte");
 
  function gameStart() {
     tentativesRestantes = maxTentatives;
-    nombreSecret = Math.floor(Math.random() * 100) + 1;
+    nombreSecret 
     message.textContent = "Le jeu consiste à deviner un nombre entre 1 et 100";
     tentatives.textContent = tentativesRestantes;
     guessInput.value = "";
@@ -36,10 +40,18 @@ function checkProposition(event) {
     tentatives.textContent = --tentativesRestantes;
 
     if (proposition === nombreSecret) {
-        message.textContent = "Well Done Chef 🎉🫡! Tu as deviné le nombre exact! C'est toi le/la meilleur(e) 🫵";
+        message.textContent = "Well Done Chef 🎉🫡 ! Tu as deviné le nombre exact! C'est toi le/la meilleur(e) 🫵✨";
+        body.style.background = "linear-gradient(to right, #1D976C, #93F9B9)";
+        tenta.style.display = "none";
+        positionCarte.style.height = "400px";
+        imgCarte.style.marginTop = "55px";
         endOfGame();
     } else if (tentativesRestantes === 0) {
-        message.textContent = ` Dommage 👎 ! Le nombre a trouver était ${nombreSecret}. Clique sur le bouton recommencer pour rejouer !`;
+        message.textContent = ` Dommage 😲 😐 ! Le nombre a trouver était ${nombreSecret}. J'ai confiance en toi 😊 ! Clique sur le bouton recommencer pour rejouer !`;
+        body.style.background = "linear-gradient(to left, #ee9ca7, #ffdde1)";
+        tenta.style.display = "none";
+        positionCarte.style.height = "400px";
+        imgCarte.style.marginTop = "55px";
         endOfGame();
     } else if (proposition < nombreSecret) {
         message.textContent = `C'est plus grand que ${proposition} !`;
@@ -58,9 +70,13 @@ function endOfGame() {
     resetButton.style.padding = "10px 20px";
     resetButton.style.backgroundColor = "burlywood"
     resetButton.style.boxShadow = " 5px 5px 10px #gray ";
-    carte.style.backgroundColor = "red";
-    carte.style.transform = "rotateY(185deg)";
-    carte.style.transition = "transform 2s";
+    resetButton.style.zIndex = "10";
+    // carte.style.backgroundColor = "red";
+    // carte.style.transform = "rotateY(185deg)";
+    // carte.style.transition = "transform 2s";
+    imgCarte.style.backgroundColor = "red";
+    imgCarte.style.transform = "rotateY(185deg)";
+    imgCarte.style.transition = "transform 2s";
     resetButton.style.transform = "rotateY(185deg)";
     resetButton.style.transition = "transform 2s";
 }

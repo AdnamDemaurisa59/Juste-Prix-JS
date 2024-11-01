@@ -10,7 +10,9 @@
 <body>
 
     <header>
-        <h1>Bienvenue dans le jeu du Juste Prix</h1>
+        <div class="title">
+            <h1>Bienvenue dans le jeu du juste prix ✨</h1>
+        </div>
     </header>
 
     <main>
@@ -22,9 +24,10 @@
 
         <section class="position-carte">
             <div class="carte" id="carte">
-                <!-- <span id="number-carte"></span> -->
+                <img src="./carte_yugioh.png" alt="carte yu-gi-oh" id="carte">
+                <!-- <div class="logo">Yu-Gi-Oh!</div> -->
                 <div>
-                    <button type="submit" id="resetButton" style="display: none;">Recommencer le jeu</button>
+                    <button type="submit" id="resetButton" style="display: none;"><i class="fa-solid fa-rotate-left"></i></button>
                 </div>
             </div>
         </section>
@@ -33,7 +36,7 @@
             <div class="position-score">
                 <h2 id="message"><span id="secretNumber"></span></h2>
             </div>
-            <div class="tentative">
+            <div class="tenta">
                 <h2>Vous avez le droit à <span id="tentatives"></span> tentatives</h2>
             </div>
         </section>
@@ -54,19 +57,22 @@
     </main>
 
     <footer>
-        <p> &copy; Créér par <a href="https://www.linkedin.com/in/adnam-koud-demaurisa-447379194/" target="_blank">Adnam Koud Demaurisa</a></p>
         <div class="icon-group">
             <div class="linkedin">
                 <a href="https://www.linkedin.com/in/adnam-koud-demaurisa-447379194/" target="_blank"><i class="fa-brands fa-linkedin"></i></a> 
               </div>
             
             <div class="github">
-                <a href="#" target="_blank" class="github"><i class="fa-brands fa-github"></i></a>
+                <a href="https://github.com/AdnamDemaurisa59/Juste-Prix-JS" target="_blank" class="github"><i class="fa-brands fa-github"></i></a>
             </div>
         </div>
+        
+        <p> &copy; Créér par <a href="https://www.linkedin.com/in/adnam-koud-demaurisa-447379194/" target="_blank">Adnam Koud Demaurisa</a></p>
+        
     </footer>
 
     <script src="./script.js"></script>
+    <script src="./three-js/main.js"></script>
     
 </body>
 </html>
