@@ -11,7 +11,7 @@
  const resetButton = document.getElementById("resetButton");
 //  const carte = document.getElementById("carte");
  let body = document.querySelector("body");
- let imgCarte = document.querySelector("img");
+ let imgCarte = document.querySelector(".carte img");
  const tenta = document.querySelector(".tenta")
  let positionCarte = document.querySelector(".position-carte");
 
@@ -40,18 +40,18 @@ function checkProposition(event) {
     tentatives.textContent = --tentativesRestantes;
 
     if (proposition === nombreSecret) {
-        message.textContent = "Well Done Chef 🎉🫡 ! Tu as deviné le nombre exact! C'est toi le/la meilleur(e) 🫵✨";
+        message.textContent = "Well Done Chef 🎉🫡 ! Tu as deviné le nombre exact! C'est toi le/la meilleur(e) 🫵✨. Clique sur le bouton sur la carte pour rejouer !";
         body.style.background = "linear-gradient(to right, #1D976C, #93F9B9)";
         tenta.style.display = "none";
         positionCarte.style.height = "400px";
-        imgCarte.style.marginTop = "55px";
+        imgCarte.style.marginTop = "10px";
         endOfGame();
     } else if (tentativesRestantes === 0) {
-        message.textContent = ` Dommage 😲 😐 ! Le nombre a trouver était ${nombreSecret}. J'ai confiance en toi 😊 ! Clique sur le bouton recommencer pour rejouer !`;
+        message.textContent = ` Dommage 😲 😐 ! Le nombre a trouver était ${nombreSecret}. J'ai confiance en toi 😊 ! Clique sur le bouton sur la carte pour rejouer !`;
         body.style.background = "linear-gradient(to left, #ee9ca7, #ffdde1)";
         tenta.style.display = "none";
         positionCarte.style.height = "400px";
-        imgCarte.style.marginTop = "55px";
+        imgCarte.style.marginTop = "10px";
         endOfGame();
     } else if (proposition < nombreSecret) {
         message.textContent = `C'est plus grand que ${proposition} !`;
@@ -71,13 +71,11 @@ function endOfGame() {
     resetButton.style.backgroundColor = "burlywood"
     resetButton.style.boxShadow = " 5px 5px 10px #gray ";
     resetButton.style.zIndex = "10";
-    // carte.style.backgroundColor = "red";
-    // carte.style.transform = "rotateY(185deg)";
-    // carte.style.transition = "transform 2s";
-    imgCarte.style.backgroundColor = "red";
-    imgCarte.style.transform = "rotateY(185deg)";
+    resetButton.style.borderRadius = "10px";
+    resetButton.style.marginTop = "50px";
+    imgCarte.style.transform = "rotateY(190deg)";
     imgCarte.style.transition = "transform 2s";
-    resetButton.style.transform = "rotateY(185deg)";
+    resetButton.style.transform = "rotateY(190deg)";
     resetButton.style.transition = "transform 2s";
 }
 
