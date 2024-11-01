@@ -20,7 +20,7 @@ h1 {
     color: black;
 }
 
-@keyframes title {
+/* @keyframes title {
     0% {
         right: -50%;
         
@@ -36,7 +36,7 @@ h1 {
     transition-duration: 2s;
     transition-delay: 0.2s;
     animation: title 8s ;
-}
+} */
 
 .explication-game {
     text-align: center;
@@ -70,31 +70,10 @@ h1 {
     position: relative;
 }
 
-@keyframes carte {
-    0% {
-        transform: rotate(0deg);
-        left: -350%;
-        
-    }
-    100% {
-        transform: rotate(360deg);
-        left: 12%;
-    }
-}
-
-.carte img {
-    width: 250px;
-    height: 300px;
-    border-radius: 10px;
-    /* Animation de l'image */
-    position: absolute;
-    top: 9%;
-    transform: rotateY(360deg);
-    /* transform: rotate(270deg); Tourne l'image de 270 degrés */
-    transition-property: left;
-    transition-duration: 10s;
-    /* transition-delay: 0.2s; */
-    animation: carte 5s ease-in;
+.position-button {
+    display: flex;
+    justify-content: center;
+    flex-direction: row; 
 }
 
 .position-score {
@@ -146,7 +125,7 @@ h1 {
 
 .btn-submit button{
     padding: 10px 25px;
-    background-color: lightblue;
+    background-color: rgb(68, 145, 171);
     color: white;
     /* border: none; */
     border-radius: 10px;
@@ -154,7 +133,7 @@ h1 {
 }
 
 .btn-submit button:hover {
-    background-color: rgb(103, 164, 184);
+    background-color: rgb(46, 116, 140);
 }
 
 footer {
@@ -220,13 +199,13 @@ footer a:hover {
         text-align: center;
     }
     .carte {
-        width: 200px;
-        height: 250px;
+        width: 300px;
+        height: 350px;
     }
 
     .carte img {
-        width: 200px;
-        height: 250px;
+        width: 250px;
+        height: 300px;
     }
 
     .number input {
@@ -240,4 +219,58 @@ footer a:hover {
     .icon-group {
         gap: 10px;
     }
+}
+
+/* Pour les Ecrans Tablette et Ordinateur */
+
+@media screen and (min-width: 768px) {
+    
+
+        @keyframes title {
+            0% {
+                right: -50%;
+                
+            }
+            100% {
+                right: 30%;
+            }
+        }
+
+        .title {
+            position: absolute;
+            right: 30%;
+            transition-duration: 2s;
+            transition-delay: 0.2s;
+            animation: title 8s ;
+        }
+
+        
+        @keyframes carte {
+            0% {
+                transform: rotate(0deg);
+                /* left: -350%; */
+                left: -950px;
+                
+            }
+            100% {
+                transform: rotate(360deg);
+                left: 5px;
+            }
+        }
+        
+        .carte img {
+            width: 250px;
+            height: 300px;
+            border-radius: 10px;
+            /* Animation de l'image */
+            position: absolute;
+            top: 9%;
+            transform: rotateY(360deg);
+            /* transform: rotate(270deg); Tourne l'image de 270 degrés */
+            transition-property: left;
+            transition-duration: 5s;
+            /* transition-delay: 0.2s; */
+            animation: carte 5s ease-in;
+        }
+  
 }
