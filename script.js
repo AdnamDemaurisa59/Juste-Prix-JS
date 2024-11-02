@@ -5,7 +5,7 @@
 const niveaux = {
     facile: { maxTentatives: 10, maxNombre: 200, pointsParTentative: 10 },
     moyen: { maxTentatives: 7, maxNombre: 150, pointsParTentative: 20 },
-    difficile: { maxTentatives: 5, maxNombre: 150, pointsParTentative: 50 }
+    difficile: { maxTentatives: 5, maxNombre: 120, pointsParTentative: 50 }
 };
 
 // Variables de jeu
@@ -13,6 +13,8 @@ let niveau = "facile"; // Le niveau initial
 let tentativesRestantes;
 let nombreSecret;
 let score = 0;
+let jeuReussi = false; // Indique si le joueur a deviné correctement
+
 
 const message = document.getElementById("message");
 const tentatives = document.getElementById("tentatives");
@@ -26,6 +28,29 @@ let imgCarte = document.querySelector(".carte img");
 const tenta = document.querySelector(".tenta");
 let positionCarte = document.querySelector(".position-carte");
 const scoreDisplay = document.createElement("h2");
+
+
+// Sélection des éléments du pop-up
+const popupOverlay = document.getElementById("popupOverlay");
+const closePopupButton = document.getElementById("closePopupButton");
+const closeButton = document.getElementById("closeButtonOverlay");
+
+// Fonction pour fermer le pop-up
+closePopupButton.addEventListener("click", () => {
+    popupOverlay.style.display = "none";
+});
+
+closeButton.addEventListener("click", () => {
+    popupOverlay.style.display = "none";
+});
+
+// Ferme le pop-up si l'utilisateur clique en dehors de la boîte modale
+popupOverlay.addEventListener("click", (event) => {
+    if (event.target === popupOverlay) {
+        popupOverlay.style.display = "none";
+    }
+});
+
 
 // Initialise l'affichage du score
 scoreDisplay.id = "score";
@@ -49,6 +74,11 @@ function gameStart() {
     body.style.background = "";
     positionCarte.style.height = "";
     imgCarte.style.marginTop = "";
+    jeuReussi = false; // Réinitialise à chaque nouveau départ
+
+    // Applique la classe de fond en fonction du niveau
+    body.classList.remove("bg-facile", "bg-moyen", "bg-difficile"); // Retire les classes existantes
+    body.classList.add(`bg-${niveau}`); // Ajoute la classe correspondant au niveau
 }
 
 // Fonction pour vérifier la proposition
@@ -65,17 +95,17 @@ function checkProposition(event) {
     tentatives.textContent = --tentativesRestantes;
 
     if (proposition === nombreSecret) {
+        jeuReussi = true; // Définit à vrai lorsque le joueur devine correctement
+
         // Calcul du score en fonction des tentatives restantes
         score += tentativesRestantes * niveaux[niveau].pointsParTentative;
         message.textContent = "Bien joué 🎉 ! Tu as deviné le nombre exact ! Clique sur le bouton ≥≥ pour passer au niveau suivant.";
-        body.style.background = "linear-gradient(to right, #1D976C, #93F9B9)";
         tenta.style.display = "none";
         positionCarte.style.height = "400px";
         imgCarte.style.marginTop = "10px";
         endOfGame();
     } else if (tentativesRestantes === 0) {
         message.textContent = `Dommage ! Le nombre à trouver était ${nombreSecret}. Clique sur le bouton pour recommencer.`;
-        body.style.background = "linear-gradient(to left, #ee9ca7, #ffdde1)";
         tenta.style.display = "none";
         positionCarte.style.height = "400px";
         imgCarte.style.marginTop = "10px";
@@ -93,7 +123,8 @@ function endOfGame() {
     guessInput.disabled = true;
     submitButton.disabled = true;
     resetButton.style.display = "inline";
-    nextLevelButton.style.display = (tentativesRestantes > 0 && guessInput.disabled) ? "inline" : "none";
+    // nextLevelButton.style.display = (tentativesRestantes > 0 && guessInput.disabled) ? "inline" : "none";
+    nextLevelButton.style.display = jeuReussi ? "inline" : "none"; // Utilise `jeuReussi` pour afficher le bouton
     resetButton.style.padding = "10px 20px";
     resetButton.style.backgroundColor = "burlywood";
     resetButton.style.boxShadow = "5px 5px 10px gray";
@@ -118,25 +149,28 @@ function nextLevel() {
 
     if (indexNiveau < niveauxOrdre.length - 1) {
         niveau = niveauxOrdre[indexNiveau + 1];
-        alert(`Félicitations ! Tu es passé au niveau ${niveau.toUpperCase()} !`);
+        alert(`Félicitations 🎉! Tu es passé au niveau ${niveau.toUpperCase()} !`);
         // message.textContent = `Félicitations ! Tu es passé au niveau ${niveau.toUpperCase()} !`;
         gameStart();
     } else {
-        alert("Félicitations! Tu as terminé tous les niveaux disponibles!");
+        alert("Félicitations! Tu as terminé tous les niveaux disponibles! 💪 👍. N'hésite pas à partager ce jeu à tes proches 👌. Tu peux aussi soutenir le développeur via les réseaux 🙏.");
         // message.textContent = "Bravo ! Tu as terminé tous les niveaux disponibles !";
-        // nextLevelButton.style.display = "none";
+        nextLevelButton.style.display = "none";
+        message.textContent = "Bien joué 🎉 ! Tu as terminer le jeu, tu es le/la GOAT. N'hésite pas à partager ce jeu à tes proches 👌. Tu peux aussi soutenir le développeur via les réseaux 🙏.";
     }
 }
 
 nextLevelButton.addEventListener("click", nextLevel);
 // Permet de recommencer le jeu lorsque l'utilisateur clique sur le bouton recommencer
-resetButton.addEventListener("click", () => {
-    niveau = "facile";
-    score = 0;
-    gameStart();
-});
+// resetButton.addEventListener("click", () => {
+//     niveau = "facile";
+//     score = 0;
+//     gameStart();
+// });
+
+resetButton.addEventListener("click", () => location.reload());
 
 document.getElementById("guessForm").addEventListener("submit", checkProposition);
 
-
 gameStart();
+

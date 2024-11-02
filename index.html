@@ -11,20 +11,45 @@
 
     <header>
         <div class="title">
-            <h1>Bienvenue dans le jeu du juste prix ✨</h1>
+            <h1>Bienvenue dans le jeu du juste chiffre ✨</h1>
         </div>
     </header>
 
     <main>
+
+        <section>
+            <div>
+                    <!-- Bouton pour ouvrir le pop-up manuellement (optionnel) -->
+                <button id="openPopupButton" style="display: none;">Voir Instructions & Charte Graphique</button> 
+            </div>
+            <!-- Structure du pop-up -->
+            <div id="popupOverlay" class="overlay" style="display: flex;">
+                <div id="popupContent" class="popup">
+                    <span id="closePopupButton" class="close">&times;</span>
+                    <h2>Instructions et Charte Graphique</h2>
+                    <section>
+                        <h3>Comment Jouer ?</h3>
+                        <p>- Devinez le nombre caché entre 1 et le maximum indiqué.</p>
+                        <p>- Le nombre de tentative possible & les couleurs changent en fonction du niveau de difficulté :</p>
+                        <ol>
+                            <li><span class="niveau-facile">Vert</span> : Niveau Facile</li>
+                            <li><span class="niveau-moyen">Orange</span> : Niveau Moyen</li>
+                            <li><span class="niveau-difficile">Rouge</span> : Niveau Difficile</li>
+                        </ol>
+                        <ul>
+                            <li>Vous pouvez soutenir le développeur via les réseaux en bas de page</li>
+                        </ul>
+                        <div class="close-overlay">
+                            <button id="closeButtonOverlay">Commencer le jeu</button>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </section>
+
         <section class="position-carte">
             <div class="carte" id="carte">
                 <img src="./images/carte_yugioh.png" alt="carte yu-gi-oh" id="carte">
-                <!-- <div>
-                    <button type="submit" id="resetButton" style="display: none;"><i class="fa-solid fa-rotate-left"></i></button>
-                </div>
-                <div>
-                    <button id="nextLevelButton"><i class="fa-solid fa-forward"></i></button>
-                </div> -->
             </div>
         </section>
 
@@ -40,12 +65,6 @@
         <section class="consigne">
             <div class="position-score">
                 <h2 id="message"><span id="secretNumber"></span></h2>
-                <!-- <div>
-                    <button type="submit" id="resetButton" style="display: none;"><i class="fa-solid fa-rotate-left"></i></button>
-                </div>
-                <div>
-                    <button id="nextLevelButton"><i class="fa-solid fa-forward"></i></button>
-                </div> -->
             </div>
             <div class="tenta">
                 <h2>Vous avez le droit à <span id="tentatives"></span> tentatives</h2>
