@@ -104,7 +104,34 @@ h1 {
 .position-button {
     display: flex;
     justify-content: center;
+    align-items: center;
     flex-direction: row; 
+    gap: 20px;
+}
+
+.position-btn1 {
+    transition: transform 0.3s;
+}
+
+.position-btn1:hover {
+    transform: scale(1.1);
+}
+
+.position-btn1 button{
+    cursor: pointer;
+}
+
+.position-btn2 {
+    margin-top: 50px;
+    transition: transform 0.3s;
+}
+
+.position-btn2:hover {
+    transform: scale(1.1);
+}
+
+.position-btn2 button {
+    cursor: pointer;
 }
 
 .position-score {
@@ -321,11 +348,6 @@ footer a:hover {
     background-color: burlywood;
     box-shadow: 5px 5px 10px gray;
     border-radius: 10px;
-    transition: transform 0.3s;
-}
-
-#resetButton:hover, #nextLevelButton:hover {
-    transform: scale(1.1);
 }
 
 /* Section du jeu */
@@ -378,6 +400,28 @@ footer a:hover {
     .icon-group {
         gap: 10px;
     }
+
+    .overlay {
+        padding: 20px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .popup {
+        background-color: #fff;
+        padding-left: 10px;
+        padding: 20px;
+        max-width: 500px;
+        height: 80%;
+        width: 70%;
+        position: relative;
+        overflow: scroll;
+    }
+
+    
 }
 
 /* Pour les Ecrans Tablette et Ordinateur */

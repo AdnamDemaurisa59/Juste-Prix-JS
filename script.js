@@ -15,7 +15,6 @@ let nombreSecret;
 let score = 0;
 let jeuReussi = false; // Indique si le joueur a deviné correctement
 
-
 const message = document.getElementById("message");
 const tentatives = document.getElementById("tentatives");
 const guessInput = document.getElementById("guessInput");
@@ -28,7 +27,6 @@ let imgCarte = document.querySelector(".carte img");
 const tenta = document.querySelector(".tenta");
 let positionCarte = document.querySelector(".position-carte");
 const scoreDisplay = document.createElement("h2");
-
 
 // Sélection des éléments du pop-up
 const popupOverlay = document.getElementById("popupOverlay");
@@ -50,7 +48,7 @@ closeButton.addEventListener("click", () => {
     popupOverlay.style.display = "none";
 });
 
-// Ferme le pop-up si l'utilisateur clique en dehors de la boîte modale
+// Ferme le pop-up si l'utilisateur clique en dehors de la modale
 popupOverlay.addEventListener("click", (event) => {
     if (event.target === popupOverlay) {
         popupOverlay.style.display = "none";
@@ -69,7 +67,6 @@ let tempsRestant; // Temps restant en secondes
 let timer;
 let timeRemaining; // Variable pour stocker le temps restant
 const level = 'facile'; // Remplace cette valeur par le niveau sélectionné ('facile', 'moyen', 'difficile')
-
 
 let proximitePrecedente = null;
 
@@ -145,7 +142,7 @@ function startTimer() {
     }, 1000);
 }
 
-// Fonction pour vérifier la proposition
+// Fonction pour vérifier le nombre que l'utilisateur propose
 function checkProposition(event) {
     event.preventDefault();
 
@@ -182,7 +179,6 @@ function checkProposition(event) {
       // Affiche la liste des nombres tentés
       const nombresTentesDisplay = document.getElementById("nombresTentesDisplay");
       nombresTentesDisplay.textContent = `Nombres tentés : ${nombresTentes.join(", ")}`;
-  
 
     if (isNaN(proposition) || proposition < 1 || proposition > niveaux[niveau].maxNombre) {
         message.textContent = `Veuillez entrer un nombre entre 1 et ${niveaux[niveau].maxNombre}.`;
@@ -220,6 +216,7 @@ function checkProposition(event) {
         tenta.style.display = "none";
         positionCarte.style.height = "400px";
         imgCarte.style.marginTop = "10px";
+        message.style.color = "black"; // Réinitialise la couleur du message
         clearInterval(timerInterval); // Arrête le timer quand le nombre n'est pas trouvé
         endOfGame();
     } else if (proposition < nombreSecret) {
@@ -273,6 +270,8 @@ function nextLevel() {
 }
 
 nextLevelButton.addEventListener("click", nextLevel);
+
+resetButton.addEventListener("click", () => location.reload());
 // Permet de recommencer le jeu lorsque l'utilisateur clique sur le bouton recommencer
 // resetButton.addEventListener("click", () => {
 //     niveau = "facile";
@@ -280,9 +279,6 @@ nextLevelButton.addEventListener("click", nextLevel);
 //     gameStart();
 // });
 
-resetButton.addEventListener("click", () => location.reload());
-
 document.getElementById("guessForm").addEventListener("submit", checkProposition);
 
 gameStart();
-
