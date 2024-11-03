@@ -5,7 +5,7 @@
 const niveaux = {
     facile: { maxTentatives: 10, maxNombre: 200, pointsParTentative: 10 },
     moyen: { maxTentatives: 7, maxNombre: 150, pointsParTentative: 20 },
-    difficile: { maxTentatives: 5, maxNombre: 120, pointsParTentative: 50 }
+    difficile: { maxTentatives: 5, maxNombre: 150, pointsParTentative: 50 }
 };
 
 // Variables de jeu
@@ -34,6 +34,12 @@ const scoreDisplay = document.createElement("h2");
 const popupOverlay = document.getElementById("popupOverlay");
 const closePopupButton = document.getElementById("closePopupButton");
 const closeButton = document.getElementById("closeButtonOverlay");
+const openOveray = document.getElementById("openOverlay");
+
+openOveray.addEventListener("click", () => 
+{
+    popupOverlay.style.display = "block";
+});
 
 // Fonction pour fermer le pop-up
 closePopupButton.addEventListener("click", () => {
@@ -49,9 +55,10 @@ popupOverlay.addEventListener("click", (event) => {
     if (event.target === popupOverlay) {
         popupOverlay.style.display = "none";
     }
-});
+}
+);
 
-// Ajouter en haut pour initialiser
+// Ajoute en haut pour initialiser
 let nombresTentes = [];
 
 let timerInterval;
@@ -59,24 +66,23 @@ let timerStarted = false;
 
 let tempsRestant; // Temps restant en secondes
 
-
 let timer;
 let timeRemaining; // Variable pour stocker le temps restant
-const level = 'facile'; // Remplacer cette valeur par le niveau sélectionné ('facile', 'moyen', 'difficile')
+const level = 'facile'; // Remplace cette valeur par le niveau sélectionné ('facile', 'moyen', 'difficile')
 
 
 let proximitePrecedente = null;
-
 
 // Initialise l'affichage du score
 scoreDisplay.id = "score";
 scoreDisplay.textContent = `Score : ${score}`;
 document.querySelector(".consigne").appendChild(scoreDisplay);
 
+
 // Fonction pour démarrer le jeu
 function gameStart() {
 
-    // Configurer le temps en fonction du niveau
+    // Configure le temps en fonction du niveau
     tempsRestant = niveau === "facile" ? 90 : niveau === "moyen" ? 60 : 30;
 
     clearInterval(timerInterval); // Réinitialise le timer
@@ -107,10 +113,10 @@ function gameStart() {
     body.classList.remove("bg-facile", "bg-moyen", "bg-difficile"); // Retire les classes existantes
     body.classList.add(`bg-${niveau}`); // Ajoute la classe correspondant au niveau
 
-    // Supprimer les classes de police précédentes
+    // Supprime les classes de police précédentes
     body.classList.remove("police-facile", "police-moyen", "police-difficile");
 
-    // Ajouter la police selon le niveau
+    // Ajoute la police selon le niveau
     if (niveau === "facile") {
         body.classList.add("police-facile");
     } else if (niveau === "moyen") {
@@ -124,7 +130,7 @@ function gameStart() {
 
 }
 
-// Nouvelle fonction pour lancer le timer
+// Fonction pour lancer le timer
 function startTimer() {
     timerInterval = setInterval(() => {
         document.getElementById("timerDisplay").textContent = `Temps restant : ${tempsRestant}s`;
@@ -151,14 +157,14 @@ function checkProposition(event) {
     startTimer();
 }
 
-    // Vérifier la proximité
+    // Vérifie la proximité
     const difference = Math.abs(nombreSecret - proposition);
 
     if (proposition === nombreSecret) {
         message.style.color = "green"; // Réponse trouvé
     } else if (difference <= 10) {
         message.style.color = "red"; // Très proche
-    } else if (difference <= 20) {
+    } else if (difference <= 25) {
         message.style.color = "orange"; // Assez proche
     } else {
         message.style.color = "blue"; // Loin
@@ -189,10 +195,22 @@ function checkProposition(event) {
         jeuReussi = true; // Définit à vrai lorsque le joueur devine correctement
         clearInterval(timerInterval); // Arrête le timer quand le nombre est trouvé
 
+        // function showCongratulationsPopup() {
+        //     const popupCongrats = document.getElementById('congratulationsPopup');
+        //     popupCongrats.classList.remove('hidden');
+        //     setTimeout(() => closePopupCongrats(), 3000); // Ferme automatiquement après 3 secondes
+        // }
+        
+        // function closePopupCongrats() {
+        //     // const popupCongrats = document.getElementById('congratulationsPopup');
+        //     popupCongrats.classList.add('hidden');
+        // }
+
 
         // Calcul du score en fonction des tentatives restantes
         score += tentativesRestantes * niveaux[niveau].pointsParTentative;
         message.textContent = "Bien joué 🎉 ! Tu as deviné le nombre exact ! Clique sur le bouton ≥≥ pour passer au niveau suivant.";
+        // message.textContent = `${popupCongrats}`
         tenta.style.display = "none";
         positionCarte.style.height = "400px";
         imgCarte.style.marginTop = "10px";

@@ -81,7 +81,6 @@ h1 {
     justify-content: center;
     align-items: center;
     height: 400px;
-
 }
 
 .consigne {
@@ -223,6 +222,31 @@ footer a:hover {
 }
 
 
+/* Bouton pour ouvrir le pop-up */
+.open-overlay {
+    position: fixed;
+    top: 10px;
+    left: 20px;
+    z-index: 100;
+}
+
+.open-overlay button {
+    padding: 5px 10px;
+    background-color: lightgray;
+    color: black;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    outline: none;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.open-overlay button:hover {
+    background-color: lightslategray;
+}
+
+
 /* Style pour l'overlay et la boîte modale */
 .overlay {
     position: fixed;
@@ -269,6 +293,14 @@ footer a:hover {
     position: relative;
 }
 
+.close i {
+    color: red;
+}
+
+.close i:hover {
+    color: rgb(214, 15, 15);
+}
+
 .close {
     position: absolute;
     top: 10px;
@@ -300,6 +332,21 @@ footer a:hover {
 #jeu {
     margin-top: 20px;
 }
+
+
+.popup-congrats {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    display: none;
+    animation: fadeIn 0.5s ease;
+}
+.hidden { display: none; }
 
 
 

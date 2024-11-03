@@ -23,6 +23,9 @@
         <div class="title">
             <h1>Bienvenue dans le jeu du juste chiffre ✨</h1>
         </div>
+        <div class="open-overlay">
+            <button id="openOverlay"><i class="fa-regular fa-lightbulb"></i></button>
+        </div>
     </header>
 
     <main>
@@ -35,7 +38,7 @@
             <!-- Structure du pop-up -->
             <div id="popupOverlay" class="overlay" style="display: flex;">
                 <div id="popupContent" class="popup">
-                    <span id="closePopupButton" class="close">&times;</span>
+                    <span id="closePopupButton" class="close"><i class="fa-solid fa-xmark"></i></span>
                     <h2>Instructions et Charte Graphique</h2>
                     <section>
                         <h3>Comment Jouer ?</h3>
@@ -93,6 +96,11 @@
             </div>
         </section>
 
+        <div id="congratulationsPopup" class="popup-congrats hidden">
+            <p>Félicitations ! Niveau réussi !</p>
+            <button onclick="closePopupCongrats()">OK</button>
+        </div>
+
         <section class="guess-form">
             <form id="guessForm">
                 <div class="enter-proposition">
@@ -109,6 +117,7 @@
                 </div>
             </form>
         </section>
+        
     </main>
 
     <footer>
@@ -126,6 +135,19 @@
 
     <script src="./script.js"></script>
     <!-- <script src="./three-js/main.js"></script> -->
+
+    <!-- <script>
+        function showCongratulationsPopup() {
+            const popup = document.getElementById('congratulationsPopup');
+            popup.classList.remove('hidden');
+            setTimeout(() => closePopup(), 3000); // Ferme automatiquement après 3 secondes
+        }
+        
+        function closePopupCongrats() {
+            const popup = document.getElementById('congratulationsPopup');
+            popup.classList.add('hidden');
+        }
+    </script> -->
     
 </body>
 </html>
