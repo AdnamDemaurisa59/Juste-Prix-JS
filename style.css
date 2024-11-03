@@ -34,6 +34,37 @@ body
     background: linear-gradient(to left, #ff9966, #ff5e62);
 }
 
+.police-facile {
+    font-family: "Itim", cursive;
+    font-style: normal;
+}
+.police-moyen {
+    font-family: "Pacifico", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+.police-difficile {
+    font-family: "Dancing Script", cursive;
+    font-style: normal;
+    font-size: 30px;
+}
+
+.green span {
+    color: green;
+}
+
+.red span {
+    color: red;
+}
+
+.blue span {
+    color: blue;
+}
+
+.orange span {
+    color: orange;
+}
+
 h1 {
     font-size: 35px;
     color: black;

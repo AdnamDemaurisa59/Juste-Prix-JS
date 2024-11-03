@@ -6,6 +6,16 @@
     <title>Exercice - Juste Prix - JS</title>
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Itim&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Itim&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Itim&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Pacifico&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -30,12 +40,21 @@
                     <section>
                         <h3>Comment Jouer ?</h3>
                         <p>- Devinez le nombre caché entre 1 et le maximum indiqué.</p>
-                        <p>- Le nombre de tentative possible & les couleurs changent en fonction du niveau de difficulté :</p>
+                        <p>- Le nombre de tentative possible, la police d'écriture & les couleurs changent en fonction du niveau de difficulté :</p>
                         <ol>
                             <li><span class="niveau-facile">Vert</span> : Niveau Facile</li>
                             <li><span class="niveau-moyen">Orange</span> : Niveau Moyen</li>
                             <li><span class="niveau-difficile">Rouge</span> : Niveau Difficile</li>
                         </ol>
+                        <p>- Le champs où s'affiche le nombre à trouver s'ajuste avec des couleurs différentes. </p>
+                        <ul>
+                            <li class="green"><span>Vert :</span> le nombre est trouver</li>
+                            <li class="red"><span>Rouge :</span> Vous chauffez, le nombre a trouver est très proche</li>
+                            <li class="orange"><span>Orange :</span> Vous êtes assez proche du nombre à trouver</li>
+                            <li class="blue"><span>Bleu :</span> Vous vous éloigner du nombre à trouver</li>
+                        </ul>
+                        <p>- Les nombres dejà tenté seront afficher afin de limiter les répétitions, et ne seront donc pas comptabilisé comme des tentatives.</p>
+                        <p>- Le timer ne se lance que lorsque le 1er nombre est renseigner.(valable pour chaque niveau)</p>
                         <ul>
                             <li>Vous pouvez soutenir le développeur via les réseaux en bas de page</li>
                         </ul>
@@ -63,6 +82,9 @@
         </section>
 
         <section class="consigne">
+            <div>
+                <h2 id="timerDisplay" class="timer-display"></h2>
+            </div>
             <div class="position-score">
                 <h2 id="message"><span id="secretNumber"></span></h2>
             </div>
@@ -78,6 +100,9 @@
                 </div>
                 <div class="number">
                     <input type="number" id="guessInput" min="1" required> 
+                </div>
+                <div>
+                    <div id="nombresTentesDisplay" class="nombres-tentes"></div>
                 </div>
                 <div class="btn-submit">
                     <button type="submit" id="submitButton">Proposer</button>

@@ -51,6 +51,22 @@ popupOverlay.addEventListener("click", (event) => {
     }
 });
 
+// Ajouter en haut pour initialiser
+let nombresTentes = [];
+
+let timerInterval;
+let timerStarted = false;
+
+let tempsRestant; // Temps restant en secondes
+
+
+let timer;
+let timeRemaining; // Variable pour stocker le temps restant
+const level = 'facile'; // Remplacer cette valeur par le niveau sélectionné ('facile', 'moyen', 'difficile')
+
+
+let proximitePrecedente = null;
+
 
 // Initialise l'affichage du score
 scoreDisplay.id = "score";
@@ -59,10 +75,21 @@ document.querySelector(".consigne").appendChild(scoreDisplay);
 
 // Fonction pour démarrer le jeu
 function gameStart() {
+
+    // Configurer le temps en fonction du niveau
+    tempsRestant = niveau === "facile" ? 90 : niveau === "moyen" ? 60 : 30;
+
+    clearInterval(timerInterval); // Réinitialise le timer
+    timerStarted = false; // Réinitialise l'état du timer
+    
+    clearInterval(timerInterval); // Réinitialise le timer
+
     tentativesRestantes = niveaux[niveau].maxTentatives;
     nombreSecret = Math.floor(Math.random() * niveaux[niveau].maxNombre) + 1;
     
     message.textContent = `Le jeu consiste à deviner un nombre entre 1 et ${niveaux[niveau].maxNombre}`;
+    message.style.color = "black"; // Réinitialise la couleur du message ici
+
     tentatives.textContent = tentativesRestantes;
     guessInput.value = "";
     guessInput.disabled = false;
@@ -79,6 +106,37 @@ function gameStart() {
     // Applique la classe de fond en fonction du niveau
     body.classList.remove("bg-facile", "bg-moyen", "bg-difficile"); // Retire les classes existantes
     body.classList.add(`bg-${niveau}`); // Ajoute la classe correspondant au niveau
+
+    // Supprimer les classes de police précédentes
+    body.classList.remove("police-facile", "police-moyen", "police-difficile");
+
+    // Ajouter la police selon le niveau
+    if (niveau === "facile") {
+        body.classList.add("police-facile");
+    } else if (niveau === "moyen") {
+        body.classList.add("police-moyen");
+    } else if (niveau === "difficile") {
+        body.classList.add("police-difficile");
+    }
+
+    nombresTentes = [];
+    nombreTenteDisplay.innerHTML = ""; // Supposons que nombreTenteDisplay est l’élément contenant les nombres tentés
+
+}
+
+// Nouvelle fonction pour lancer le timer
+function startTimer() {
+    timerInterval = setInterval(() => {
+        document.getElementById("timerDisplay").textContent = `Temps restant : ${tempsRestant}s`;
+        
+        if (tempsRestant > 0) {
+            tempsRestant--;
+        } else {
+            clearInterval(timerInterval);
+            message.textContent = "Temps écoulé ! Le jeu est terminé.";
+            endOfGame(); // Termine le jeu si le temps est écoulé
+        }
+    }, 1000);
 }
 
 // Fonction pour vérifier la proposition
@@ -86,6 +144,39 @@ function checkProposition(event) {
     event.preventDefault();
 
     const proposition = parseInt(guessInput.value, 10);
+
+   // Si le timer n'a pas encore démarré, on le lance au premier nombre renseigné
+   if (!timerStarted) {
+    timerStarted = true;
+    startTimer();
+}
+
+    // Vérifier la proximité
+    const difference = Math.abs(nombreSecret - proposition);
+
+    if (proposition === nombreSecret) {
+        message.style.color = "green"; // Réponse trouvé
+    } else if (difference <= 10) {
+        message.style.color = "red"; // Très proche
+    } else if (difference <= 20) {
+        message.style.color = "orange"; // Assez proche
+    } else {
+        message.style.color = "blue"; // Loin
+    }
+
+    // Vérifie si le nombre a déjà été essayé
+    if (nombresTentes.includes(proposition)) {
+        message.textContent = "Vous avez déjà essayé ce nombre. Essayez en un autre.";
+        return;
+    }
+
+    // Ajoute le nombre à la liste des tentatives si c'est une nouvelle proposition
+    nombresTentes.push(proposition);
+
+      // Affiche la liste des nombres tentés
+      const nombresTentesDisplay = document.getElementById("nombresTentesDisplay");
+      nombresTentesDisplay.textContent = `Nombres tentés : ${nombresTentes.join(", ")}`;
+  
 
     if (isNaN(proposition) || proposition < 1 || proposition > niveaux[niveau].maxNombre) {
         message.textContent = `Veuillez entrer un nombre entre 1 et ${niveaux[niveau].maxNombre}.`;
@@ -96,6 +187,8 @@ function checkProposition(event) {
 
     if (proposition === nombreSecret) {
         jeuReussi = true; // Définit à vrai lorsque le joueur devine correctement
+        clearInterval(timerInterval); // Arrête le timer quand le nombre est trouvé
+
 
         // Calcul du score en fonction des tentatives restantes
         score += tentativesRestantes * niveaux[niveau].pointsParTentative;
@@ -109,6 +202,7 @@ function checkProposition(event) {
         tenta.style.display = "none";
         positionCarte.style.height = "400px";
         imgCarte.style.marginTop = "10px";
+        clearInterval(timerInterval); // Arrête le timer quand le nombre n'est pas trouvé
         endOfGame();
     } else if (proposition < nombreSecret) {
         message.textContent = `C'est plus grand que ${proposition} !`;
