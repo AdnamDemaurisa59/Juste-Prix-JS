@@ -5,15 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exercice - Juste Prix - JS</title>
     <link rel="stylesheet" href="./style.css">
+    <script src="./langagues/languages.js" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
 
     <link href="https://fonts.googleapis.com/css2?family=Itim&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
 
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Itim&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Itim&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet"> -->
 
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Itim&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Pacifico&display=swap" rel="stylesheet">
 </head>
@@ -21,7 +22,7 @@
 
     <header>
         <div class="title">
-            <h1>Bienvenue dans le jeu du juste chiffre ✨</h1>
+            <h1 id="title">Bienvenue dans le jeu du juste chiffre ✨</h1>
         </div>
         <div class="open-overlay">
             <button id="openOverlay"><i class="fa-regular fa-lightbulb"></i></button>
@@ -39,27 +40,39 @@
             <div id="popupOverlay" class="overlay" style="display: flex;">
                 <div id="popupContent" class="popup">
                     <span id="closePopupButton" class="close"><i class="fa-solid fa-xmark"></i></span>
-                    <h2>Instructions et Charte Graphique</h2>
+                    <h2 id="instructions">Instructions et Charte Graphique</h2>
+                    <div class="choix-langue">
+                        <label id="choiceLangue" for="languagesSelect">Choisissez une langue avant de commencer à jouer</label>
+                        <select name="" id="languagesSelect">
+                            <option value="langueChoice">Chosir une langue</option>
+                            <option value="fr">Français</option>
+                            <option value="en">Anglais</option>
+                            <option value="es">Espagnol</option>
+                            <option value="ar">Arabe</option>
+                            <option value="lin">Lingala</option>
+                            <option value="it">Italien</option>
+                        </select>
+                    </div>
                     <section>
-                        <h3>Comment Jouer ?</h3>
-                        <p>- Devinez le nombre caché entre 1 et le maximum indiqué.</p>
-                        <p>- Le nombre de tentative possible, la police d'écriture & les couleurs changent en fonction du niveau de difficulté :</p>
+                        <h3 id="playing">Comment Jouer ?</h3>
+                        <p id="playingPara1">- Devinez le nombre caché entre 1 et le maximum indiqué.</p>
+                        <p id="playingPara2">- Le nombre de tentative possible, la police d'écriture & les couleurs changent en fonction du niveau de difficulté :</p>
                         <ol>
-                            <li><span class="niveau-facile">Vert</span> : Niveau Facile</li>
-                            <li><span class="niveau-moyen">Orange</span> : Niveau Moyen</li>
-                            <li><span class="niveau-difficile">Rouge</span> : Niveau Difficile</li>
+                            <li id="playingLi1"><span class="niveau-facile">Vert</span> : Niveau Facile</li>
+                            <li id="playingLi2"><span class="niveau-moyen">Orange</span> : Niveau Moyen</li>
+                            <li id="playingLi3"><span class="niveau-difficile">Rouge</span> : Niveau Difficile</li>
                         </ol>
-                        <p>- Le champs où s'affiche le nombre à trouver s'ajuste avec des couleurs différentes. </p>
+                        <p id="playingPara3">- Le champs où s'affiche le nombre à trouver s'ajuste avec des couleurs différentes. </p>
                         <ul>
-                            <li class="green"><span>Vert :</span> le nombre est trouver</li>
-                            <li class="red"><span>Rouge :</span> Vous chauffez, le nombre a trouver est très proche</li>
-                            <li class="orange"><span>Orange :</span> Vous êtes assez proche du nombre à trouver</li>
-                            <li class="blue"><span>Bleu :</span> Vous vous éloigner du nombre à trouver</li>
+                            <li id="playingLi4" class="green"><span>Vert :</span> le nombre est trouver</li>
+                            <li id="playingLi5" class="red"><span>Rouge :</span> Vous chauffez, le nombre a trouver est très proche</li>
+                            <li id="playingLi6" class="orange"><span>Orange :</span> Vous êtes assez proche du nombre à trouver</li>
+                            <li id="playingLi7" class="blue"><span>Bleu :</span> Vous vous éloignez du nombre à trouver</li>
                         </ul>
-                        <p>- Les nombres dejà tenté seront afficher afin de limiter les répétitions, et ne seront donc pas comptabilisé comme des tentatives.</p>
-                        <p>- Le timer ne se lance que lorsque le 1er nombre est renseigner.(valable pour chaque niveau)</p>
+                        <p id="playingPara4">- Les nombres dejà tenté seront afficher afin de limiter les répétitions, et ne seront donc pas comptabilisé comme des tentatives.</p>
+                        <p id="playingPara5">- Le timer ne se lance que lorsque le 1er nombre est renseigner.(valable pour chaque niveau)</p>
                         <ul>
-                            <li>Vous pouvez soutenir le développeur via les réseaux en bas de page</li>
+                            <li id="playingLi8">Vous pouvez soutenir le développeur via les réseaux en bas de page</li>
                         </ul>
                         <div class="close-overlay">
                             <button id="closeButtonOverlay">Commencer le jeu</button>
@@ -92,19 +105,19 @@
                 <h2 id="message"><span id="secretNumber"></span></h2>
             </div>
             <div class="tenta">
-                <h2>Vous avez le droit à <span id="tentatives"></span> tentatives</h2>
+                <h2 id="nbTentatives">Vous avez le droit à <span id="tentatives"></span> tentatives</h2>
             </div>
         </section>
 
         <div id="congratulationsPopup" class="popup-congrats hidden">
-            <p>Félicitations ! Niveau réussi !</p>
+            <p id="congratulations">Félicitations ! Niveau réussi !</p>
             <button onclick="closePopupCongrats()">OK</button>
         </div>
 
         <section class="guess-form">
             <form id="guessForm">
                 <div class="enter-proposition">
-                    <label for="guessInput">Entrez votre proposition : </label>
+                    <label id="enterProposition" for="guessInput">Entrez votre proposition : </label>
                 </div>
                 <div class="number">
                     <input type="number" id="guessInput" min="1" required> 
@@ -130,7 +143,7 @@
                 <a href="https://github.com/AdnamDemaurisa59/Juste-Prix-JS" target="_blank" class="github"><i class="fa-brands fa-github"></i></a>
             </div>
         </div>
-        <p> &copy; 2024 - Jeu créér par <a href="https://www.linkedin.com/in/adnam-koud-demaurisa-447379194/" target="_blank">Adnam Koud Demaurisa</a></p>
+        <p id="footerPara"> &copy; 2024 - Jeu créér par <a href="https://www.linkedin.com/in/adnam-koud-demaurisa-447379194/" target="_blank">Adnam Koud Demaurisa</a></p>
     </footer>
 
     <script src="./script.js"></script>

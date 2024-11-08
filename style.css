@@ -49,20 +49,20 @@ body
     font-size: 30px;
 }
 
-.green span {
+#playingLi4 {
     color: green;
 }
 
-.red span {
+#playingLi5 {
     color: red;
 }
 
-.blue span {
-    color: blue;
+#playingLi6 {
+    color: orange;
 }
 
-.orange span {
-    color: orange;
+#playingLi7 {
+    color: blue;
 }
 
 h1 {
@@ -337,9 +337,9 @@ footer a:hover {
     cursor: pointer;
 }
 
-.niveau-facile { color: lightgreen; }
-.niveau-moyen { color: lightsalmon; }
-.niveau-difficile { color: lightcoral; }
+#playingLi1 { color: lightgreen; }
+#playingLi2 { color: lightsalmon; }
+#playingLi3 { color: lightcoral; }
 
 
 /* Bouton pour relancer le jeu et bouton de niveau suivant */
