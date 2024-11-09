@@ -123,7 +123,7 @@ function gameStart() {
     }
 
     nombresTentes = [];
-    nombreTenteDisplay.innerHTML = ""; // Supposons que nombreTenteDisplay est l’élément contenant les nombres tentés
+    nombreTentesDisplay.innerHTML = ""; // Supposons que nombreTenteDisplay est l’élément contenant les nombres tentés
 
 }
 
@@ -131,7 +131,6 @@ function gameStart() {
 function startTimer() {
     timerInterval = setInterval(() => {
         document.getElementById("timerDisplay").textContent = `Temps restant : ${tempsRestant}s`;
-        
         if (tempsRestant > 0) {
             tempsRestant--;
         } else {
@@ -147,6 +146,18 @@ function checkProposition(event) {
     event.preventDefault();
 
     const proposition = parseInt(guessInput.value, 10);
+
+    const cssTimer = document.getElementById('timerDisplay');
+
+    cssTimer.style.height = "60px";
+    cssTimer.style.width = "250px";
+    cssTimer.style.padding = "30px";
+    cssTimer.style.backgroundColor = "rgb(244, 240, 240)";
+    cssTimer.style.borderRadius = "25px";
+    cssTimer.style.boxShadow = "0 8px 18px rgba(0, 0, 0, 0.3)";
+    cssTimer.style.textAlign = "center";
+    cssTimer.style.paddingTop = "15px";
+
 
    // Si le timer n'a pas encore démarré, on le lance au premier nombre renseigné
    if (!timerStarted) {
@@ -255,16 +266,20 @@ function endOfGame() {
 function nextLevel() {
     const niveauxOrdre = ["facile", "moyen", "difficile"];
     const indexNiveau = niveauxOrdre.indexOf(niveau);
+    const cssMessage = document.getElementById('message');
+
 
     if (indexNiveau < niveauxOrdre.length - 1) {
         niveau = niveauxOrdre[indexNiveau + 1];
         alert(`Félicitations 🎉! Tu es passé au niveau ${niveau.toUpperCase()} !`);
         // message.textContent = `Félicitations ! Tu es passé au niveau ${niveau.toUpperCase()} !`;
+
         gameStart();
     } else {
         alert("Félicitations! Tu as terminé tous les niveaux disponibles! 💪 👍. N'hésite pas à partager ce jeu à tes proches 👌. Tu peux aussi soutenir le développeur via les réseaux 🙏.");
         // message.textContent = "Bravo ! Tu as terminé tous les niveaux disponibles !";
         nextLevelButton.style.display = "none";
+        cssMessage.style.height = "165px";
         message.textContent = "Bien joué 🎉 ! Tu as terminer le jeu, tu es le/la GOAT. N'hésite pas à partager ce jeu à tes proches 👌. Tu peux aussi soutenir le développeur via les réseaux 🙏.";
     }
 }

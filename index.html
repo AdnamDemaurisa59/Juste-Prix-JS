@@ -7,6 +7,15 @@
     <link rel="stylesheet" href="./style.css">
     <script src="./langagues/languages.js" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* Style des messages d'erreur et de validation */
+       .error {
+        background-color: #e96060; 
+    }
+        .valid {
+        background-color: #6fec6f; 
+    }
+    </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -105,7 +114,10 @@
                 <h2 id="message"><span id="secretNumber"></span></h2>
             </div>
             <div class="tenta">
-                <h2 id="nbTentatives">Vous avez le droit à <span id="tentatives"></span> tentatives</h2>
+                <h2>
+                    <span id="nbTentatives">Tentatives restantes : </span> 
+                    <b><span id="tentatives"></span></b> 
+                </h2>
             </div>
         </section>
 
@@ -120,7 +132,7 @@
                     <label id="enterProposition" for="guessInput">Entrez votre proposition : </label>
                 </div>
                 <div class="number">
-                    <input type="number" id="guessInput" min="1" required> 
+                    <input type="tel" id="guessInput" inputmode="numeric" min="1" title="Seul les nombres sont autorisés. Si vous renseigner autre chose qu'un nombre l'input sera rouge, si c'est un nombre compris entre 1 et 3 chiffres l'input sera vert." required> 
                 </div>
                 <div>
                     <div id="nombresTentesDisplay" class="nombres-tentes"></div>
@@ -161,6 +173,28 @@
             popup.classList.add('hidden');
         }
     </script> -->
+
+
+    <script>
+       // Sélection des champs d'entrée
+       const telephoneInput = document.getElementById('guessInput');
+       
+       // Regex pour le téléphone
+       const telRegex = /^[0-9]{1,3}$/;
+
+       // Fonction de validation pour le champ de téléphone
+       telephoneInput.addEventListener('input', () => {
+           if (telephoneInput.value === '') {
+               telephoneInput.classList.remove('error', 'valid');
+           } else if (!telRegex.test(telephoneInput.value)) {
+               telephoneInput.classList.add('error');
+               telephoneInput.classList.remove('valid');
+           } else {
+               telephoneInput.classList.remove('error'); 
+               telephoneInput.classList.add('valid'); 
+           }
+       });
+    </script>
     
 </body>
 </html>

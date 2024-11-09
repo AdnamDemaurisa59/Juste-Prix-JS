@@ -39,14 +39,23 @@ body
     font-style: normal;
 }
 .police-moyen {
-    font-family: "Pacifico", cursive;
+    /* font-family: "Pacifico", cursive;
   font-weight: 400;
+  font-style: normal; */
+
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 300;
   font-style: normal;
 }
 .police-difficile {
-    font-family: "Dancing Script", cursive;
+    /* font-family: "Dancing Script", cursive;
     font-style: normal;
-    font-size: 30px;
+    font-size: 30px; */
+
+    font-family: "Edu AU VIC WA NT Pre", cursive;
+    font-optical-sizing: auto;
+    /* font-weight: <weight>; */
+    font-style: normal;
 }
 
 #playingLi4 {
@@ -421,8 +430,40 @@ footer a:hover {
         overflow: scroll;
     }
 
+    #guessInput {
+        font-size: 16px;
+    }
     
 }
+
+#timerDisplay {
+    color: rgb(210, 76, 76);
+}
+
+#message {
+    height: 100px;
+    width: 400px;
+    padding: 30px;
+    background-color: rgb(225, 220, 220);
+    border-radius: 10px;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    padding-top: 30px;
+}
+
+/* 
+#timerDisplay {
+    height: 60px;
+    width: 250px;
+    padding: 30px;
+    background-color: rgb(244, 240, 240);
+    border-radius: 25px;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    padding-top: 30px;
+} */
+
+
 
 /* Pour les Ecrans Tablette et Ordinateur */
 

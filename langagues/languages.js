@@ -27,13 +27,13 @@ fetch("./langagues/languages.json")
             document.getElementById("playingPara4").innerText = selectedLanguage.playingPara4;
             document.getElementById("playingPara5").innerText = selectedLanguage.playingPara5;
             document.getElementById("closeButtonOverlay").innerText = selectedLanguage.closeButtonOverlay;
-            document.getElementById("nbTentatives").innerText = selectedLanguage.nbTentatives;
+            // document.getElementById("nbTentatives").innerText = selectedLanguage.nbTentatives;
             // document.getElementById("tentatives").innerText = selectedLanguage.tentatives;
             document.getElementById("congratulations").innerText = selectedLanguage.congratulations;
             document.getElementById("enterProposition").innerText = selectedLanguage.enterProposition;
             document.getElementById("submitButton").innerText = selectedLanguage.submitButton;
             document.getElementById("nombresTentesDisplay").innerText = selectedLanguage.nombresTentesDisplay;
-            document.getElementById("message").innerText = selectedLanguage.message;
+            // document.getElementById("message").innerText = selectedLanguage.message;
             document.getElementById("footerPara").innerText = selectedLanguage.footerPara;
 
             // document.getElementById("messageChangeNumber").innerText = selectedLanguage.messageChangeNumber;
