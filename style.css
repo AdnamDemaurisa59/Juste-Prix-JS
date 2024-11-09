@@ -433,6 +433,13 @@ footer a:hover {
     #guessInput {
         font-size: 16px;
     }
+
+    #message {
+        height: 150px;
+        width: 300px;
+        padding: 45px;
+        padding-top: 30px;
+    }
     
 }
 
@@ -441,9 +448,9 @@ footer a:hover {
 }
 
 #message {
-    height: 100px;
-    width: 400px;
-    padding: 30px;
+    height: 125px;
+    width: 310px;
+    padding: 50px;
     background-color: rgb(225, 220, 220);
     border-radius: 10px;
     box-shadow: 0 8px 18px rgba(0, 0, 0, 0.3);
