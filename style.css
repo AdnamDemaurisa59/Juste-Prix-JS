@@ -407,6 +407,29 @@ footer a:hover {
     padding-top: 30px;
 } */
 
+.choix-langue select{
+    margin-top: 10px;
+    width: 300px;
+    padding: 5px;
+    border-radius: 10px;
+    border: 2px solid black;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    background: url("https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-arrow-down-512.png") no-repeat right;
+    background-size: 20px;
+    background-position-x: 95%;
+    font-size: 16px;
+    /* transition: box-shadow 0.3s ease; */
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+    /* -webkit-transition: box-shadow 0.3s ease;
+    -moz-transition: box-shadow 0.3s ease;
+    -ms-transition: box-shadow 0.3s ease;
+    -o-transition: box-shadow 0.3s ease; */
+}
 
 /* Media Queries */
 
@@ -477,11 +500,6 @@ footer a:hover {
 
     .overlay {
         padding: 20px;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
     }
 
     .popup {
@@ -582,42 +600,20 @@ footer a:hover {
             /* transition-delay: 0.2s; */
             animation: carte 5s ease-in;
         }
+        
+        .position-button button {
+            position: relative;
+            z-index: 1;
+        }
+    
+        .overlay {
+            padding: 20px;
+        }
 
-
-.choix-langue select{
-    margin-top: 10px;
-    width: 300px;
-    padding: 5px;
-    border-radius: 10px;
-    border: 2px solid black;
-    cursor: pointer;
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    -ms-appearance: none;
-    -o-appearance: none;
-    background: url("https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-arrow-down-512.png") no-repeat right;
-    background-size: 20px;
-    background-position-x: 95%;
-    font-size: 16px;
-    /* transition: box-shadow 0.3s ease; */
-    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
-    /* -webkit-transition: box-shadow 0.3s ease;
-    -moz-transition: box-shadow 0.3s ease;
-    -ms-transition: box-shadow 0.3s ease;
-    -o-transition: box-shadow 0.3s ease; */
 }
 
-    .position-button button {
-        position: relative;
-        z-index: 1;
-    }
-
-    .overlay {
-        padding: 20px;
-    }
   
-}
+
 
 /* 
 @keyframes fadeIn {
