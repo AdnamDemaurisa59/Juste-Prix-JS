@@ -150,7 +150,8 @@ function checkProposition(event) {
     const cssTimer = document.getElementById('timerDisplay');
 
     cssTimer.style.height = "60px";
-    cssTimer.style.width = "250px";
+    cssTimer.style.width = "120px";
+    cssTimer.style.fontSize = "17px";
     cssTimer.style.padding = "30px";
     cssTimer.style.backgroundColor = "rgb(244, 240, 240)";
     cssTimer.style.borderRadius = "25px";

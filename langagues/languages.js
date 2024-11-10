@@ -11,6 +11,19 @@ fetch("./langagues/languages.json")
             document.getElementById("title").innerText = selectedLanguage.title;
             // document.getElementById("openPopupButton").innerText = selectedLanguage.openPopupButton;
             document.getElementById("choiceLangue").innerText = selectedLanguage.choiceLangue;
+            document.getElementById("langueChoice").innerText = selectedLanguage.langueChoice;
+            document.getElementById("francais").innerText = selectedLanguage.francais;
+            document.getElementById("anglais").innerText = selectedLanguage.anglais;
+            document.getElementById("espagnol").innerText = selectedLanguage.espagnol;
+            document.getElementById("arabe").innerText = selectedLanguage.arabe;
+            document.getElementById("lingala").innerText = selectedLanguage.lingala;
+            document.getElementById("italien").innerText = selectedLanguage.italien;
+            document.getElementById("neerlandais").innerText = selectedLanguage.neerlandais;
+            document.getElementById("mandarin").innerText = selectedLanguage.mandarin;
+            document.getElementById("portugais").innerText = selectedLanguage.portugais;
+            document.getElementById("allemand").innerText = selectedLanguage.allemand;
+
+
             document.getElementById("instructions").innerText = selectedLanguage.instructions;
             document.getElementById("playing").innerText = selectedLanguage.playing;
             document.getElementById("playingPara1").innerText = selectedLanguage.playingPara1;
