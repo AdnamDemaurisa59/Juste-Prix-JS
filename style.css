@@ -465,6 +465,10 @@ footer a:hover {
         z-index: 1;
     }
 
+    .overlay {
+        padding: 20px;
+    }
+
 }
 
 /* Pour les Smartphones */
@@ -600,7 +604,7 @@ footer a:hover {
             /* transition-delay: 0.2s; */
             animation: carte 5s ease-in;
         }
-        
+
         .position-button button {
             position: relative;
             z-index: 1;
