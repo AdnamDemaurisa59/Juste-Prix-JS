@@ -319,7 +319,7 @@ footer a:hover {
     background-color: #555;
 }
 
-.popup {
+/* .popup {
     background-color: #fff;
     padding: 20px;
     max-width: 500px;
@@ -327,7 +327,7 @@ footer a:hover {
     border-radius: 8px;
     text-align: left;
     position: relative;
-}
+} */
 
 .close i {
     color: red;
@@ -478,6 +478,18 @@ footer a:hover {
         z-index: 1;
     }
 
+    .popup {
+        background-color: #fff;
+        padding-left: 10px;
+        padding: 20px;
+        max-width: 350px;
+        height: 75%;
+        width: 75%;
+        position: relative;
+        overflow: scroll;
+        border-radius: 10px;
+    }
+
 }
 
 /* Pour les Smartphones */
@@ -530,9 +542,10 @@ footer a:hover {
         padding: 20px;
         max-width: 500px;
         height: 80%;
-        width: 70%;
+        width: 80%;
         position: relative;
         overflow: scroll;
+        border-radius: 10px;
     }
 
     #guessInput {
@@ -639,6 +652,18 @@ footer a:hover {
             justify-content: center;
             align-items: center;
             z-index: 1;
+        }
+    
+        .popup {
+            background-color: #fff;
+            padding-left: 10px;
+            padding: 20px;
+            max-width: 600px;
+            height: 85%;
+            width: 90%;
+            position: relative;
+            overflow: scroll;
+            border-radius: 10px;
         }
 
 }
