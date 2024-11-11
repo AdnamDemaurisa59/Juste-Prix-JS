@@ -463,6 +463,11 @@ footer a:hover {
         z-index: 1;
     }
 
+
+    .choix-langue select{
+        width: 250px;
+    }
+
     .overlay {
         position: fixed;
         top: 0;
