@@ -9,7 +9,6 @@ fetch("./langagues/languages.json")
             const selectedLanguage = data.languages[languages];
             if (!selectedLanguage) return;  // Arrêter si la langue n'existe pas dans le JSON            
             document.getElementById("title").innerText = selectedLanguage.title;
-            // document.getElementById("openPopupButton").innerText = selectedLanguage.openPopupButton;
             document.getElementById("choiceLangue").innerText = selectedLanguage.choiceLangue;
             document.getElementById("langueChoice").innerText = selectedLanguage.langueChoice;
             document.getElementById("francais").innerText = selectedLanguage.francais;
@@ -22,7 +21,6 @@ fetch("./langagues/languages.json")
             document.getElementById("mandarin").innerText = selectedLanguage.mandarin;
             document.getElementById("portugais").innerText = selectedLanguage.portugais;
             document.getElementById("allemand").innerText = selectedLanguage.allemand;
-
 
             document.getElementById("instructions").innerText = selectedLanguage.instructions;
             document.getElementById("playing").innerText = selectedLanguage.playing;

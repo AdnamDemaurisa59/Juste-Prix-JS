@@ -253,7 +253,8 @@ function endOfGame() {
     nextLevelButton.style.padding = "10px 20px";
     nextLevelButton.style.backgroundColor = "burlywood";
     nextLevelButton.style.boxShadow = "5px 5px 10px gray";
-    nextLevelButton.style.zIndex = "100";
+    nextLevelButton.style.position = "relative";
+    nextLevelButton.style.zIndex = "10";
     resetButton.style.borderRadius = "10px";
     resetButton.style.marginTop = "50px";
     imgCarte.style.transform = "rotateY(190deg)";

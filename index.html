@@ -34,6 +34,7 @@
             <h1 id="title">Bienvenue dans le jeu du juste chiffre ✨</h1>
         </div>
         <div class="open-overlay">
+            <!-- Bouton pour ouvrir le pop-up manuellement -->
             <button id="openOverlay"><i class="fa-regular fa-lightbulb"></i></button>
         </div>
     </header>
@@ -41,15 +42,11 @@
     <main>
 
         <section>
-            <div>
-                    <!-- Bouton pour ouvrir le pop-up manuellement (optionnel) -->
-                <button id="openPopupButton" style="display: none;">Voir Instructions & Charte Graphique</button> 
-            </div>
             <!-- Structure du pop-up -->
             <div id="popupOverlay" class="overlay" style="display: flex;">
                 <div id="popupContent" class="popup">
                     <span id="closePopupButton" class="close"><i class="fa-solid fa-xmark"></i></span>
-                    <h2 id="instructions">Instructions et Charte Graphique</h2>
+                    <h2 id="instructions">Voir Instructions et Charte Graphique</h2>
                     <div class="choix-langue">
                         <label id="choiceLangue" for="languagesSelect">Choisissez une langue avant de commencer à jouer</label>
                         <select name="" id="languagesSelect">

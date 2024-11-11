@@ -438,7 +438,7 @@ footer a:hover {
 @media screen and (max-width: 550px) {
 
     h1, h2, .number {
-        font-size: 13px;
+        font-size: 16px;
         text-align: center;
     }
 
@@ -448,19 +448,14 @@ footer a:hover {
     }
 
     .carte {
-        margin-top: -200px;
+        margin-top: -250px;
         width: 150px;
         height: 200px;
     }
 
     .consigne {
-        font-size: 13px;
+        font-size: 15px;
         margin-top: -250px;
-    }
-
-    .position-button button {
-        position: relative;
-        z-index: 1;
     }
 
 
@@ -478,7 +473,7 @@ footer a:hover {
         display: flex;
         justify-content: center;
         align-items: center;
-        z-index: 1;
+        z-index: 100;
     }
 
     .popup {
@@ -493,6 +488,21 @@ footer a:hover {
         position: relative;
         overflow: scroll;
         border-radius: 10px;
+    }
+
+    .position-btn1 {
+        margin-top: -275px;
+    }
+
+    .position-btn2 {
+        margin-top: -230px;
+    }
+
+    #message {
+        height: 150px;
+        width: 200px;
+        padding: 25px;
+        font-size: 16px;
     }
 
 }
@@ -538,7 +548,7 @@ footer a:hover {
         display: flex;
         justify-content: center;
         align-items: center;
-        z-index: 1;
+        z-index: 100;
     }
 
     .popup {
@@ -553,6 +563,7 @@ footer a:hover {
         position: relative;
         overflow: scroll;
         border-radius: 10px;
+        z-index: 10;
     }
 
     #guessInput {
@@ -561,7 +572,7 @@ footer a:hover {
 
     #message {
         height: 150px;
-        width: 200px;
+        width: 300px;
         padding: 25px;
         font-size: 16px;
     }
@@ -584,10 +595,8 @@ footer a:hover {
         font-size: 16px;
     }
 
-    .position-button button {
-        position: relative;
-        z-index: 1;
-    }
+
+
 }
 
 
@@ -643,10 +652,6 @@ footer a:hover {
             animation: carte 5s ease-in;
         }
 
-        .position-button button {
-            position: relative;
-            z-index: 1;
-        }
     
         .overlay {
             position: fixed;
@@ -658,7 +663,7 @@ footer a:hover {
             display: flex;
             justify-content: center;
             align-items: center;
-            z-index: 1;
+            z-index: 100;
         }
     
         .popup {
@@ -673,6 +678,7 @@ footer a:hover {
             position: relative;
             overflow: scroll;
             border-radius: 10px;
+            z-index: 10;
         }
 
 }
