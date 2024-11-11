@@ -263,7 +263,7 @@ footer a:hover {
     position: fixed;
     top: 10px;
     left: 20px;
-    z-index: 100;
+    z-index: 10;
 }
 
 .open-overlay button {
@@ -435,8 +435,6 @@ footer a:hover {
 
 
 /* Pour les Smartphones avec un écran plus petit*/
-
-
 @media screen and (max-width: 550px) {
 
     h1, h2, .number {
@@ -482,6 +480,8 @@ footer a:hover {
         background-color: #fff;
         padding-left: 10px;
         padding: 20px;
+        margin-left: 15px;
+        margin-top: 15px;
         max-width: 350px;
         height: 75%;
         width: 75%;
@@ -541,6 +541,8 @@ footer a:hover {
         padding-left: 10px;
         padding: 20px;
         max-width: 500px;
+        margin-left: 15px;
+        margin-top: 15px;
         height: 80%;
         width: 80%;
         position: relative;
@@ -659,6 +661,8 @@ footer a:hover {
             padding-left: 10px;
             padding: 20px;
             max-width: 600px;
+            margin-left: 15px;
+            margin-top: 15px;
             height: 85%;
             width: 90%;
             position: relative;
