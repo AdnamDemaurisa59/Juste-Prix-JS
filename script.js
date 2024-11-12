@@ -123,8 +123,34 @@ function gameStart() {
     }
 
     nombresTentes = [];
-    nombreTentesDisplay.innerHTML = ""; // Supposons que nombreTenteDisplay est l’élément contenant les nombres tentés
+    nombreTentesDisplay.innerHTML = "10"; // Supposons que nombreTenteDisplay est l’élément contenant les nombres tentés
 
+
+        // Charge les données de cache au démarrage
+        function initGame() {
+            const savedScore = localStorage.getItem("score");
+            const savedLevel = localStorage.getItem("niveau");
+    
+            if (savedScore) score = parseInt(savedScore, 10);
+            if (savedLevel) niveau = savedLevel;
+    
+            scoreDisplay.textContent = `Score : ${score}`;
+            document.body.classList.add(`bg-${niveau}`); // Applique le fond du niveau stocké
+    
+            gameStart();
+        }
+
+}
+
+// Réinitialise le jeu et le cache
+function resetGame() {
+    localStorage.removeItem("score");
+    localStorage.removeItem("niveau");
+    score = 0;
+    niveau = "facile";
+    initGame();
+
+    window.onload = initGame;
 }
 
 // Fonction pour lancer le timer
@@ -261,7 +287,12 @@ function endOfGame() {
     imgCarte.style.transition = "transform 2s";
     resetButton.style.transform = "rotateY(190deg)";
     resetButton.style.transition = "transform 2s";
+
+    // Sauvegarde le score actuel dans le Local Storage
+    localStorage.setItem("score", score);
+
     scoreDisplay.textContent = `Score : ${score}`;
+
 }
 
 // Fonction pour passer au niveau suivant
@@ -273,6 +304,7 @@ function nextLevel() {
 
     if (indexNiveau < niveauxOrdre.length - 1) {
         niveau = niveauxOrdre[indexNiveau + 1];
+        localStorage.setItem("niveau", niveau); // Sauvegarde le niveau dans le Local Storage
         alert(`Félicitations 🎉! Tu es passé au niveau ${niveau.toUpperCase()} !`);
         // message.textContent = `Félicitations ! Tu es passé au niveau ${niveau.toUpperCase()} !`;
 
