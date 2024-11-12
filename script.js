@@ -126,20 +126,21 @@ function gameStart() {
     nombreTentesDisplay.innerHTML = "10"; // Supposons que nombreTenteDisplay est l’élément contenant les nombres tentés
 
 
-        // Charge les données de cache au démarrage
-        function initGame() {
-            const savedScore = localStorage.getItem("score");
-            const savedLevel = localStorage.getItem("niveau");
-    
-            if (savedScore) score = parseInt(savedScore, 10);
-            if (savedLevel) niveau = savedLevel;
-    
-            scoreDisplay.textContent = `Score : ${score}`;
-            document.body.classList.add(`bg-${niveau}`); // Applique le fond du niveau stocké
-    
-            gameStart();
-        }
+      
+}
 
+  // Charge les données de cache au démarrage
+  function initGame() {
+    const savedScore = localStorage.getItem("score");
+    const savedLevel = localStorage.getItem("niveau");
+
+    if (savedScore) score = parseInt(savedScore, 10);
+    if (savedLevel) niveau = savedLevel;
+
+    scoreDisplay.textContent = `Score : ${score}`;
+    document.body.classList.add(`bg-${niveau}`); // Applique le fond du niveau stocké
+
+    gameStart();
 }
 
 // Réinitialise le jeu et le cache
@@ -150,7 +151,6 @@ function resetGame() {
     niveau = "facile";
     initGame();
 
-    window.onload = initGame;
 }
 
 // Fonction pour lancer le timer
@@ -330,4 +330,6 @@ resetButton.addEventListener("click", () => location.reload());
 
 document.getElementById("guessForm").addEventListener("submit", checkProposition);
 
-gameStart();
+// gameStart();
+
+initGame() // Appelle la fonction pour initialiser le jeu
