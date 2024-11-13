@@ -29,6 +29,8 @@
             "playingLi6": "Orange : Vous êtes assez proche du nombre à trouver",
             "playingLi7": "Bleu : Vous vous éloignez du nombre à trouver",
             "playingLi8": "Vous pouvez soutenir le développeur via les réseaux en bas de page",
+            "playingLi9": "Nouvelle fonctionnalité : Vous pouvez fermer le navigateur et reprendre la partie où vous vous êtes arrêter.👌 👍",
+
             "playingPara4": "- Les nombres dejà tenté seront afficher afin de limiter les répétitions, et ne seront donc pas comptabilisé comme des tentatives.",
             "playingPara5": "- Le timer ne se lance que lorsque le 1er nombre est renseigner.(valable pour chaque niveau)",
             "closeButtonOverlay": "Commencer le jeu",
@@ -76,6 +78,8 @@
             "playingLi6": "Orange: You’re somewhat close.",
             "playingLi7": "Blue: You’re far from the target number.",
             "playingLi8": "You can support the developer via the networks at the bottom of the page",
+            "playingLi9": "New feature: You can close the browser and resume the game where you left off. 👌 👍",
+
             "playingPara4": "- Already tried numbers will be displayed to avoid repetitions and won’t count as attempts.",
             "playingPara5": "- The timer only starts after the first number is entered (applies to each level).",
             "closeButtonOverlay": "Start the Game",
@@ -123,6 +127,8 @@
             "playingLi6": "Naranja: Estás algo cerca.",
             "playingLi7": "Azul: Estás lejos del número objetivo.",
             "playingLi8": "Puedes apoyar al desarrollador a través de las redes al final de la página.",
+            "playingLi9": "Nueva función: Puedes cerrar el navegador y reanudar la partida donde la dejaste. 👌 👍",
+
             "playingPara4": "- Los números ya intentados se mostrarán para evitar repeticiones y no contarán como intentos.",
             "playingPara5": "- El temporizador solo comienza después de ingresar el primer número (aplica para cada nivel).",
             "closeButtonOverlay": "Iniciar el Juego",
@@ -170,6 +176,8 @@
             "playingLi6": "البرتقالي: أنت قريب إلى حد ما.",
             "playingLi7": "الأزرق: أنت بعيد عن الرقم الهدف.",
             "playingLi8": "يمكنكم دعم المطور عبر الشبكات الموجودة أسفل الصفحة",
+            "playingLi9": "ميزة جديدة: يمكنك إغلاق المتصفح واستئناف اللعبة من حيث توقفت. 👌 👍",
+
             "playingPara4": "- سيتم عرض الأرقام التي تمت تجربتها مسبقًا لتجنب التكرار ولن تحسب كمحاولات.",
             "playingPara5": "- يبدأ المؤقت بعد إدخال الرقم الأول فقط (ينطبق على كل مستوى).",
             "closeButtonOverlay": "ابدأ اللعبة",
@@ -217,6 +225,8 @@
             "playingLi6": "Arancione: Sei abbastanza vicino.",
             "playingLi7": "Blu: Sei lontano dal numero obiettivo.",
             "playingLi8": "Puoi supportare lo sviluppatore tramite le reti in fondo alla pagina",
+            "playingLi9": "Nuova funzionalità: Puoi chiudere il browser e riprendere il gioco da dove lo avevi lasciato. 👌 👍",
+
             "playingPara4": "- I numeri già tentati verranno visualizzati per evitare ripetizioni e non conteranno come tentativi.",
             "playingPara5": "- Il timer parte solo dopo aver inserito il primo numero (valido per ogni livello).",
             "closeButtonOverlay": "Inizia il Gioco",
@@ -264,6 +274,8 @@
             "playingLi6": "Molangi: Ozali pene naino.",
             "playingLi7": "Bleu: Ozali mosika na motángo ya kobenga.",
             "playingLi8": "Okoki kosunga développeur na nzela ya ba réseaux oyo ezali na se ya page",
+            "playingLi9": "Eloko ya sika: Okoki kokanga navigateur mpe kobanda lisusu esika otikaki masano. 👌 👍",
+
             "playingPara4": "- Bamotángo oyo okanisaki liboso ekomonisama mpo ete oloba na bango lisusu te ná ekokomisa yango te lokola esayi.",
             "playingPara5": "- Compte-à-rebours ebandi kaka sima na kokotisa motángo ya liboso (emesaná mpo na etape nyonso).",
             "closeButtonOverlay": "Bandá Masano",
@@ -311,6 +323,8 @@
          "playingLi6": "Oranje: Je bent redelijk dicht bij het te raden nummer",
          "playingLi7": "Blauw: Je verwijdert je van het te raden nummer",
           "playingLi8": "Je kunt de ontwikkelaar ondersteunen via de netwerken onderaan de pagina",
+          "playingLi9": "Nieuwe functie: Je kunt de browser sluiten en het spel hervatten waar je bent gestopt. 👌 👍",
+
                 "playingPara4": "- Eerder geprobeerd nummers worden weergegeven om herhalingen te voorkomen, en worden niet geteld als pogingen.",
                 "playingPara5": "- De timer start pas wanneer het eerste nummer is ingevoerd (geldig voor elk niveau).",
                 "closeButtonOverlay": "Begin het spel",
@@ -358,6 +372,8 @@
                 "playingLi6": "橙色：你离目标数字很接近",
                 "playingLi7": "蓝色：你离目标数字越来越远",
                 "playingLi8": "您可以通过页面底部的网络支持开发者",
+                "playingLi9": "新功能：您可以关闭浏览器并从上次离开的地方继续游戏。👌 👍",
+
                 "playingPara4": "- 已尝试的数字会显示，以防重复，不会计为尝试。",
                 "playingPara5": "- 计时器仅在输入第一个数字后开始（适用于每个级别）。",
                 "closeButtonOverlay": "开始游戏",
@@ -405,6 +421,8 @@
                 "playingLi6": "Laranja: Você está próximo do número a encontrar",
                 "playingLi7": "Azul: Você está se afastando do número a encontrar",
                 "playingLi8": "Você pode apoiar o desenvolvedor através das redes no rodapé",
+                "playingLi9": "Nova funcionalidade: Você pode fechar o navegador e retomar o jogo de onde parou. 👌 👍",
+
                 "playingPara4": "- Os números já tentados serão exibidos para evitar repetições e não serão contabilizados como tentativas.",
                 "playingPara5": "- O cronômetro só começa quando o primeiro número é inserido (válido para cada nível).",
                 "closeButtonOverlay": "Começar o jogo",
@@ -452,6 +470,8 @@
                 "playingLi6": "Orange: Sie sind der gesuchten Zahl recht nahe",
                 "playingLi7": "Blau: Sie entfernen sich von der gesuchten Zahl",
                 "playingLi8": "Sie können den Entwickler über die Netzwerke am unteren Rand der Seite unterstützen",
+                "playingLi9": "Neue Funktion: Sie können den Browser schließen und das Spiel dort fortsetzen, wo Sie aufgehört haben. 👌 👍",
+
                 "playingPara4": "- Bereits versuchte Zahlen werden angezeigt, um Wiederholungen zu vermeiden, und werden nicht als Versuche gezählt.",
                 "playingPara5": "- Der Timer startet erst, wenn die erste Zahl eingegeben wird (gilt für jedes Level).",
                 "closeButtonOverlay": "Spiel starten",

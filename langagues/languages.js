@@ -35,6 +35,7 @@ fetch("./langagues/languages.json")
             document.getElementById("playingLi6").innerText = selectedLanguage.playingLi6;
             document.getElementById("playingLi7").innerText = selectedLanguage.playingLi7;
             document.getElementById("playingLi8").innerText = selectedLanguage.playingLi8;
+            document.getElementById("playingLi9").innerText = selectedLanguage.playingLi9;
             document.getElementById("playingPara4").innerText = selectedLanguage.playingPara4;
             document.getElementById("playingPara5").innerText = selectedLanguage.playingPara5;
             document.getElementById("closeButtonOverlay").innerText = selectedLanguage.closeButtonOverlay;
