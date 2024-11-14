@@ -13,7 +13,7 @@
             "lingala": "Lingala",
             "italien": "Italien",
             "neerlandais": "Néerlandais",
-            "mandarin": "Mandarin",
+            "chinois": "Chinois",
             "portugais": "Portugais",
             "allemand": "Allemand",
 
@@ -62,7 +62,7 @@
             "lingala": "Lingala",
             "italien": "Italian",
             "neerlandais": "Dutch",
-            "mandarin": "Mandarin",
+            "chinois": "Chinese",
             "portugais": "Portuguese",
             "allemand": "German",
 
@@ -111,7 +111,7 @@
             "lingala": "Lingala",
             "italien": "Italiano",
             "neerlandais": "Neerlandés",
-            "mandarin": "Mandarín",
+            "chinois": "Chino",
             "portugais": "Portugués",
             "allemand": "Alemán",
 
@@ -160,7 +160,7 @@
             "lingala": "اللينجالا",
             "italien": "ايطالي",
             "neerlandais": "هولندية",
-            "mandarin": "ماندارين",
+            "chinois": "الصينية",
             "portugais": "البرتغالية",
             "allemand": "الألمانية",
 
@@ -209,8 +209,8 @@
             "lingala": "Lingala",
             "italien": "Italiano",
            "neerlandais": "Olandese",
-        "mandarin": "Mandarino",
-        "portugais": "Portoghese",
+           "chinois": "Cinese",
+           "portugais": "Portoghese",
         "allemand": "Tedesco",
 
             "playing": "Come giocare?",
@@ -258,7 +258,7 @@
             "lingala": "Lingala",
             "italien": "Italien",
             "neerlandais": "Néerlandais",
-            "mandarin": "Mandarin",
+            "chinois": "Sine",
             "portugais": "Monoko ya Portugais",
             "allemand": "Allemand",
 
@@ -307,7 +307,7 @@
            "lingala": "Lingala",
           "italien": "Italiaans",
           "neerlandais": "Nederlands",
-          "mandarin": "Mandarijn",
+          "chinois": "Chinees",
           "portugais": "Portugees",
           "allemand": "Duits",
 
@@ -356,7 +356,7 @@
                 "lingala": "林加拉语",
                 "italien": "意大利语",
                 "neerlandais": "荷兰语",
-                "mandarin": "普通话",
+                "chinois": "中文",
                 "portugais": "葡萄牙语",
                 "allemand": "德语",
 
@@ -405,7 +405,7 @@
                 "lingala": "Lingala",
                 "italien": "Italiano",
                 "neerlandais": "Neerlandês",
-                "mandarin": "Mandarim",
+                "chinois": "Chinês",
                 "portugais": "Português",
                 "allemand": "Alemão",
 
@@ -454,7 +454,7 @@
                 "lingala": "Lingala",
                 "italien": "Italienisch",
                 "neerlandais": "Niederländisch",
-                "mandarin": "Mandarin",
+                "chinois": "Chinesisch",
                 "portugais": "Portugiesisch",
                 "allemand": "Deutsch",
 

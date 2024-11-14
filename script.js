@@ -156,7 +156,7 @@ function resetGame() {
 // Fonction pour lancer le timer
 function startTimer() {
     timerInterval = setInterval(() => {
-        document.getElementById("timerDisplay").textContent = `Temps restant : ${tempsRestant}s`;
+        document.getElementById("timerDisplay").textContent = ` Temps restant : ${tempsRestant}s`;
         if (tempsRestant > 0) {
             tempsRestant--;
         } else {

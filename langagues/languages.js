@@ -7,7 +7,18 @@ fetch("./langagues/languages.json")
     .then(data => {
         function updateLanguage(languages) {
             const selectedLanguage = data.languages[languages];
-            if (!selectedLanguage) return;  // Arrêter si la langue n'existe pas dans le JSON            
+            if (!selectedLanguage) return;  // Arrêter si la langue n'existe pas dans le JSON 
+                 
+            // Définit l'attribut de langue (lang) de l'élément racine <html> en utilisant la valeur de la variable "languages".
+            document.documentElement.lang = languages;
+            // Vérifie si la langue sélectionnée est l'arabe ("ar").
+            if (languages === "ar") {
+                // Si c'est le cas, applique une mise en page de droite à gauche (rtl) à l'élément racine <html>.
+                document.documentElement.style.direction = "rtl";
+            } else {
+                // Sinon, applique une mise en page de gauche à droite (ltr) par défaut à l'élément racine <html>.
+                document.documentElement.style.direction = "ltr";
+            }
             document.getElementById("title").innerText = selectedLanguage.title;
             document.getElementById("choiceLangue").innerText = selectedLanguage.choiceLangue;
             document.getElementById("langueChoice").innerText = selectedLanguage.langueChoice;
@@ -18,7 +29,7 @@ fetch("./langagues/languages.json")
             document.getElementById("lingala").innerText = selectedLanguage.lingala;
             document.getElementById("italien").innerText = selectedLanguage.italien;
             document.getElementById("neerlandais").innerText = selectedLanguage.neerlandais;
-            document.getElementById("mandarin").innerText = selectedLanguage.mandarin;
+            document.getElementById("chinois").innerText = selectedLanguage.chinois;
             document.getElementById("portugais").innerText = selectedLanguage.portugais;
             document.getElementById("allemand").innerText = selectedLanguage.allemand;
 

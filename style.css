@@ -568,6 +568,10 @@ footer a:hover {
         z-index: 10;
     }
 
+    .popup li {
+        text-decoration: none;
+    }
+
     #guessInput {
         font-size: 16px;
     }
@@ -683,9 +687,44 @@ footer a:hover {
             z-index: 10;
         }
 
+        .rules-game li {
+            text-decoration: none;
+        }
+
 }
 
-  
+
+/* [lang="ar"] {
+    direction: rtl;
+} 
+   */
+/* Applique une mise en page en lecture de droite à gauche (rtl) pour les éléments lorsque la langue est définie sur l'arabe ("ar") */
+
+/* [lang="zh"] .popup p, [lang="zh"] .popup li{ */
+/* Initialement prévu pour cibler les paragraphes <p> et les éléments de liste <li> à l'intérieur de .popup 
+   lorsque la langue est définie sur le chinois ("zh"). 
+   Cependant, ce code est actuellement en commentaire et n'a pas d'effet */
+
+/* [lang="zh"] .popup .rules-game */
+[lang="zh"] .popup .rules-game {
+    /* Définit le mode d'écriture en vertical de droite à gauche pour le texte en chinois */
+    writing-mode: vertical-rl;
+    
+    /* Oriente chaque caractère verticalement, afin qu'ils soient affichés à la verticale */
+    text-orientation: upright;
+    
+    /* Ajuste l'espacement entre les lignes pour améliorer la lisibilité en mode d'écriture vertical */
+    line-height: 1.5;
+}
+
+/* li */
+li {
+    /* Place le symbole de liste (par exemple, un point) à l'intérieur de l'élément <li>, 
+       plutôt qu'à l'extérieur, pour un meilleur alignement et une meilleure esthétique */
+    list-style-position: inside;
+}
+
+
 
 
 /* 
