@@ -15,6 +15,7 @@ Fonctionnalités principales :
 Tech Stack :
 
 HTML, CSS, JavaScript.
+
 Comment jouer ?
 
 Cliquez sur le lien ci-dessous pour commencer à jouer en ligne.
