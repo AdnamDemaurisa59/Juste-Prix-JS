@@ -14,7 +14,7 @@ Fonctionnalités principales :
 
 Tech Stack :
 
-HTML, CSS, JavaScript.
+HTML, CSS, JavaScript, Json.
 
 Comment jouer ?
 
